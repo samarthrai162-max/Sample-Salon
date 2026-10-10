@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cuts & Curves | Luxury Salon Experience</title>
+
+<meta name="description" content="Explore the Cuts & Curves salon website concept, featuring hair styling, beauty services and appointment enquiries.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0b0b0b;
+  --panel: #131313;
+  --gold: #d6b477;
+  --gold-light: #f0d8a5;
+  --white: #f7f4ee;
+  --muted: #aaa69e;
+  --line: rgba(214,180,119,.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body, button, input, select {
+  font-family: 'DM Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+::selection {
+  background: var(--gold);
+  color: #111;
+}
+
+/* DEMO NOTICE */
+
+.demo-notice {
+  position: relative;
+  z-index: 1001;
+  padding: 8px 12px;
+  text-align: center;
+  background: var(--gold);
+  color: #15120c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11,11,11,.92);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.navbar {
+  max-width: 1240px;
+  margin: auto;
+  min-height: 78px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.logo small {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: 4px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: -3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.nav-links a {
+  color: #dedbd5;
+  font-size: 12px;
+  transition: color .3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-links .nav-cta {
+  padding: 12px 17px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--gold);
+  font-size: 25px;
+  width: 43px;
+  height: 43px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 660px;
+  min-height: min(760px, 90svh);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #111;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(8,8,8,.98) 0%,
+      rgba(8,8,8,.83) 43%,
+      rgba(8,8,8,.22) 100%),
+    linear-gradient(0deg, rgba(8,8,8,.65), transparent 45%),
+    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=90")
+    center 42% / cover;
+  transform: scale(1.06);
+  animation: heroZoom 10s ease-out forwards;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  width: 100%;
+  margin: auto;
+  padding: 90px 7%;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(54px, 8vw, 100px);
+  line-height: .96;
+  font-weight: 500;
+  max-width: 750px;
+  margin: 28px 0;
+  animation: rise .9s .1s both;
+}
+
+.hero h1 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.hero p {
+  color: #c5c0b7;
+  max-width: 440px;
+  font-size: 14px;
+  line-height: 1.9;
+  animation: rise .9s .25s both;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  animation: rise .9s .4s both;
+}
+
+.btn {
+  min-height: 50px;
+  padding: 0 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: transform .3s, background .3s, color .3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #17130d;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,.35);
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 65px;
+  color: #d3cec4;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.hero-note span {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--gold);
+}
+
+/* COMMON SECTIONS */
+
+section {
+  padding: 100px 7%;
+}
+
+.container {
+  max-width: 1120px;
+  margin: auto;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 48px;
+}
+
+.section-heading.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading.center .eyebrow {
+  justify-content: center;
+}
+
+.section-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5vw, 65px);
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 20px 0;
+}
+
+.section-heading h2 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.section-heading p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* INTRO */
+
+.intro {
+  background: #101010;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.intro-image {
+  height: 480px;
+  position: relative;
+}
+
+.intro-image img {
+  height: 100%;
+  object-position: center;
+  filter: saturate(.7);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 16px 20px;
+  background: rgba(10,10,10,.88);
+  border-left: 2px solid var(--gold);
+}
+
+.image-caption strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.image-caption span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.intro-copy h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 5vw, 63px);
+  line-height: 1.04;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.intro-copy h2 em {
+  color: var(--gold);
+}
+
+.intro-copy p {
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.text-link span {
+  transition: transform .3s;
+}
+
+.text-link:hover span {
+  transform: translateX(6px);
+}
+
+/* SERVICES */
+
+.services {
+  background: var(--bg);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.service-card {
+  position: relative;
+  min-height: 260px;
+  padding: 32px 27px;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.06);
+  transition: transform .35s, border-color .35s, background .35s;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(214,180,119,.09);
+  border-radius: 50%;
+  right: -70px;
+  bottom: -70px;
+  transition: transform .5s;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--line);
+  background: #191714;
+}
+
+.service-card:hover::after {
+  transform: scale(1.5);
+}
+
+.service-number {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.service-icon {
+  font-size: 29px;
+  margin: 26px 0 18px;
+  color: var(--gold);
+}
+
+.service-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* GALLERY */
+
+.gallery {
+  background: #101010;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-rows: 235px 235px;
+  gap: 14px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: #222;
+}
+
+.gallery-item:first-child {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  height: 100%;
+  transition: transform .7s, filter .5s;
+  filter: brightness(.78) saturate(.8);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(.95) saturate(1);
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 35px 20px 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,.9));
+}
+
+.gallery-label span {
+  display: block;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.gallery-label h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* PRICING */
+
+.pricing {
+  background: var(--bg);
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.price-card {
+  padding: 35px 28px;
+  border: 1px solid var(--line);
+  background: #101010;
+  transition: transform .3s;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-card.featured {
+  border-color: var(--gold);
+  background: linear-gradient(145deg, #201b13, #101010 75%);
+}
+
+.price-card .tag {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.price-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 17px 0 8px;
+}
+
+.price-card .price {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 23px;
+}
+
+.price-card ul {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.price-card li {
+  font-size: 12px;
+  color: #c4c0b8;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.price-card li::before {
+  content: "✦";
+  color: var(--gold);
+  margin-right: 10px;
+}
+
+.price-card .btn {
+  width: 100%;
+}
+
+/* EXPERIENCE */
+
+.experience {
+  padding: 0;
+  background: #17130e;
+}
+
+.experience-inner {
+  max-width: 1120px;
+  margin: auto;
+  padding: 70px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.experience h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.experience h2 em {
+  color: var(--gold);
+}
+
+.experience p {
+  color: #c2b9aa;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 15px;
+  max-width: 460px;
+}
+
+/* APPOINTMENT */
+
+.appointment {
+  background: #101010;
+}
+
+.appointment-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 75px;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 53px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 20px 0;
+}
+
+.contact-info h2 em {
+  color: var(--gold);
+}
+
+.contact-info > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.contact-row {
+  display: flex;
+  gap: 15px;
+  padding: 19px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.contact-row .icon {
+  color: var(--gold);
+  font-size: 19px;
+}
+
+.contact-row strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.contact-row span {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.booking-form {
+  padding: 35px;
+  background: #171717;
+  border: 1px solid rgba(255,255,255,.07);
+}
+
+.booking-form h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 33px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.booking-form > p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.form-field {
+  margin-bottom: 17px;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  display: block;
+  font-size: 10px;
+  color: #d8d1c4;
+  margin-bottom: 9px;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  height: 48px;
+  padding: 0 13px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #101010;
+  color: white;
+  border-radius: 0;
+  outline: none;
+  font-size: 12px;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--gold);
+}
+
+.form-field select option {
+  background: #101010;
+}
+
+.booking-form button {
+  width: 100%;
+  border: none;
+  margin-top: 5px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 7%;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: #090909;
+}
+
+.footer-inner {
+  max-width: 1120px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer-copy {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 10px;
+  color: #d5d0c8;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-demo {
+  text-align: center;
+  font-size: 9px;
+  color: #807a70;
+  margin-top: 20px;
+}
+
+/* WHATSAPP FLOAT BUTTON */
+
+.float-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 900;
+  width: 53px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--gold);
+  color: #111;
+  font-size: 23px;
+  border-radius: 50%;
+  box-shadow: 0 6px 25px rgba(0,0,0,.4);
+  transition: transform .3s;
+}
+
+.float-btn:hover {
+  transform: scale(1.1);
+}
+
+/* REVEAL ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .intro-grid,
+  .appointment-grid {
+    gap: 35px;
+  }
+
+  .services-grid,
+  .price-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-rows: 200px 200px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .demo-notice {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .navbar {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 15px 6% 25px;
+    background: #0d0d0d;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: .25s;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    font-size: 13px;
+  }
+
+  .nav-links .nav-cta {
+    text-align: center;
+    margin-top: 12px;
+    padding: 14px;
+  }
+
+  .hero {
+    min-height: 680px;
+    min-height: 82svh;
+  }
+
+  .hero-bg {
+    background:
+      linear-gradient(90deg, rgba(8,8,8,.85), rgba(8,8,8,.45)),
+      linear-gradient(0deg, rgba(8,8,8,.8), transparent 80%),
+      url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85")
+      center / cover;
+  }
+
+  .hero-content {
+    padding: 75px 7%;
+  }
+
+  .hero h1 {
+    font-size: clamp(54px, 14vw, 78px);
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero-note {
+    margin-top: 45px;
+    font-size: 9px;
+  }
+
+  section {
+    padding: 75px 6%;
+  }
+
+  .intro-grid,
+  .appointment-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .intro-image {
+    height: 380px;
+  }
+
+  .services-grid,
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 225px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 260px 180px 180px;
+  }
+
+  .gallery-item:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .gallery-label h3 {
+    font-size: 21px;
+  }
+
+  .experience-inner {
+    padding: 60px 6%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-info h2 {
+    font-size: 47px;
+  }
+
+  .booking-form {
+    padding: 24px 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-field.full {
+    grid-column: auto;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .float-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="demo-notice">
+  ✦ CONCEPT WEBSITE · SAMPLE DESIGN FOR PRESENTATION ✦
+</div>
+
+<header>
+  <nav class="navbar">
+
+    <a href="#home" class="logo">
+      CUTS <span>&</span> CURVES
+      <small>THE ART OF STYLE</small>
+    </a>
+
+    <button class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navLinks">
+      ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#appointment" class="nav-cta">BOOK A VISIT ↗</a>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home" style="padding:0">
+
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      Style. Confidence. You.
+    </div>
+
+    <h1>
+      Your Style.<br>
+      Your <em>Statement.</em>
+    </h1>
+
+    <p>
+      Discover a more personal approach to style.
+      From precision haircuts to modern looks,
+      your next transformation begins here.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#appointment" class="btn btn-gold">
+        EXPLORE APPOINTMENTS ↗
+      </a>
+
+      <a href="#services" class="btn btn-outline">
+        DISCOVER SERVICES
+      </a>
+    </div>
+
+    <div class="hero-note">
+      <span></span>
+      A MODERN SALON EXPERIENCE · LUCKNOW
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="intro" id="about">
+
+  <div class="container intro-grid">
+
+    <div class="intro-image reveal">
+      <img
+        src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85"
+        alt="Modern salon interior concept"
+        loading="lazy">
+
+      <div class="image-caption">
+        <strong>Style, Redefined.</strong>
+        <span>THE ART OF PERSONAL STYLE</span>
+      </div>
+    </div>
+
+    <div class="intro-copy reveal">
+
+      <div class="eyebrow">THE EXPERIENCE</div>
+
+      <h2>
+        More Than A Cut.<br>
+        It's <em>Your Identity.</em>
+      </h2>
+
+      <p>
+        Great style begins with understanding you.
+        Explore a salon experience built around
+        personal expression, attention to detail
+        and looks that feel uniquely yours.
+      </p>
+
+      <p>
+        Whether you want a fresh everyday look
+        or a complete style refresh, discover
+        inspiration for your next visit.
+      </p>
+
+      <a href="#services" class="text-link">
+        EXPLORE WHAT WE DO <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <div class="container">
+
+    <div class="section-heading center reveal">
+
+      <div class="eyebrow">WHAT WE OFFER</div>
+
+      <h2>
+        Your Look,<br>
+        <em>Your Rules.</em>
+      </h2>
+
+      <p>
+        Explore our sample service categories.
+        Final services and prices can be customised
+        to match the salon's actual offerings.
+      </p>
+
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service-card reveal">
+        <div class="service-number">01 / HAIR</div>
+        <div class="service-icon">✂</div>
+        <h3>Precision Haircuts</h3>
+        <p>
+          Classic cuts, modern styles and
+          personalised looks designed around
+          your preferences.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-number">02 / STYLE</div>
+        <div class="service-icon">✧</div>
+        <h3>Hair Styling</h3>
+        <p>
+          Polished everyday styling and
+          occasion-ready looks for your
+          special moments.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-number">03 / COLOUR</div>
+        <div class="service-icon">◈</div>
+        <h3>Hair Colour</h3>
+        <p>
+          Explore contemporary colour ideas
+          and find a look that complements
+          your personal style.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-number">04 / CARE</div>
+        <div class="service-icon">❋</div>
+        <h3>Hair Treatments</h3>
+        <p>
+          Discover sample hair-care and
+          conditioning service categories
+          for a refreshed look.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-number">05 / GROOMING</div>
+        <div class="service-icon">◇</div>
+        <h3>Beard & Grooming</h3>
+        <p>
+          Clean finishes and carefully
+          styled looks for a well-groomed,
+          confident appearance.
+        </p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-number">06 / OCCASIONS</div>
+        <div class="service-icon">✦</div>
+        <h3>Special Occasion</h3>
+        <p>
+          Get inspired for celebrations,
+          events and those moments when
+          you want something extra.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div class="eyebrow">STYLE INSPIRATION</div>
+
+      <h2>
+        Find Your Next<br>
+        <em>Signature Look.</em>
+      </h2>
+
+      <p>
+        A sample visual gallery showing how
+        salon styles and transformations could
+        be presented on the final website.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item reveal">
+        <img
+          src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
+          alt="Barber and salon styling inspiration"
+          loading="lazy">
+
+        <div class="gallery-label">
+          <span>01 / SIGNATURE</span>
+          <h3>The Modern Classic</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img
+          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85"
+          alt="Hair styling inspiration"
+          loading="lazy">
+
+        <div class="gallery-label">
+          <span>02 / HAIR</span>
+          <h3>Effortless Style</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img
+          src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=85"
+          alt="Beauty salon inspiration"
+          loading="lazy">
+
+        <div class="gallery-label">
+          <span>03 / BEAUTY</span>
+          <h3>Everyday Elegance</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img
+          src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=85"
+          alt="Men's grooming inspiration"
+          loading="lazy">
+
+        <div class="gallery-label">
+          <span>04 / GROOMING</span>
+          <h3>Sharp & Refined</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img
+          src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85"
+          alt="Beauty portrait inspiration"
+          loading="lazy">
+
+        <div class="gallery-label">
+          <span>05 / THE FINISH</span>
+          <h3>Own Your Look</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRICING -->
+
+<section class="pricing" id="pricing">
+
+  <div class="container">
+
+    <div class="section-heading center reveal">
+
+      <div class="eyebrow">SERVICE MENU</div>
+
+      <h2>
+        The Right Style.<br>
+        <em>The Right You.</em>
+      </h2>
+
+      <p>
+        Example service packages for this design concept.
+        These are not verified Cuts & Curves prices.
+      </p>
+
+    </div>
+
+    <div class="price-grid">
+
+      <article class="price-card reveal">
+
+        <div class="tag">01 / ESSENTIAL</div>
+
+        <h3>Fresh & Clean</h3>
+
+        <div class="price">
+          Sample package · Price to be confirmed
+        </div>
+
+        <ul>
+          <li>Haircut consultation</li>
+          <li>Precision haircut</li>
+          <li>Basic styling</li>
+        </ul>
+
+        <a href="#appointment" class="btn btn-outline">
+          ENQUIRE NOW ↗
+        </a>
+
+      </article>
+
+      <article class="price-card featured reveal">
+
+        <div class="tag">02 / SIGNATURE</div>
+
+        <h3>The Style Edit</h3>
+
+        <div class="price">
+          Sample package · Price to be confirmed
+        </div>
+
+        <ul>
+          <li>Personal style consultation</li>
+          <li>Haircut and styling</li>
+          <li>Finishing touches</li>
+        </ul>
+
+        <a href="#appointment" class="btn btn-gold">
+          ENQUIRE NOW ↗
+        </a>
+
+      </article>
+
+      <article class="price-card reveal">
+
+        <div class="tag">03 / PREMIUM</div>
+
+        <h3>The Full Refresh</h3>
+
+        <div class="price">
+          Sample package · Price to be confirmed
+        </div>
+
+        <ul>
+          <li>Extended consultation</li>
+          <li>Selected styling services</li>
+          <li>Personalised finishing</li>
+        </ul>
+
+        <a href="#appointment" class="btn btn-outline">
+          ENQUIRE NOW ↗
+        </a>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="experience">
+
+  <div class="experience-inner reveal">
+
+    <div>
+      <div class="eyebrow">YOUR NEXT LOOK STARTS HERE</div>
+
+      <h2>
+        Ready For A<br>
+        <em>Fresh Perspective?</em>
+      </h2>
+
+      <p>
+        Explore the possibilities and enquire
+        about your next salon visit.
+      </p>
+    </div>
+
+    <a href="#appointment" class="btn btn-gold">
+      LET'S TALK STYLE ↗
+    </a>
+
+  </div>
+
+</section>
+
+<!-- APPOINTMENT -->
+
+<section class="appointment" id="appointment">
+
+  <div class="container appointment-grid">
+
+    <div class="contact-info reveal">
+
+      <div class="eyebrow">GET IN TOUCH</div>
+
+      <h2>
+        Your Next<br>
+        <em>Appointment.</em>
+      </h2>
+
+      <p>
+        Interested in a new look?
+        Send an enquiry using the form.
+        The final version can connect directly
+        to the salon's confirmed WhatsApp number.
+      </p>
+
+      <div class="contact-row">
+
+        <div class="icon">⌖</div>
+
+        <div>
+          <strong>Location</strong>
+          <span>Lucknow, Uttar Pradesh<br>
+          Exact address to be added</span>
+        </div>
+
+      </div>
+
+      <div class="contact-row">
+
+        <div class="icon">◷</div>
+
+        <div>
+          <strong>Opening Hours</strong>
+          <span>Actual salon timings to be confirmed</span>
+        </div>
+
+      </div>
+
+      <div class="contact-row">
+
+        <div class="icon">✉</div>
+
+        <div>
+          <strong>Appointments</strong>
+          <span>WhatsApp contact to be configured</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <form class="booking-form reveal" id="bookingForm">
+
+      <h3>Make An Enquiry</h3>
+
+      <p>
+        Fill in your details to prepare an appointment
+        request through WhatsApp.
+      </p>
+
+      <div class="form-grid">
+
+        <div class="form-field">
+          <label for="customerName">YOUR NAME</label>
+
+          <input
+            id="customerName"
+            type="text"
+            placeholder="Enter your name"
+            autocomplete="name"
+            required>
+        </div>
+
+        <div class="form-field">
+          <label for="customerPhone">YOUR PHONE</label>
+
+          <input
+            id="customerPhone"
+            type="tel"
+            placeholder="Enter phone number"
+            autocomplete="tel"
+            pattern="[0-9+() -]{7,20}"
+            required>
+        </div>
+
+        <div class="form-field full">
+          <label for="serviceChoice">SELECT A SERVICE</label>
+
+          <select id="serviceChoice" required>
+            <option value="">Choose a service</option>
+            <option>Haircut</option>
+            <option>Hair Styling</option>
+            <option>Hair Colour</option>
+            <option>Hair Treatment</option>
+            <option>Beard & Grooming</option>
+            <option>Special Occasion</option>
+            <option>Other Enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-field full">
+          <label for="visitDate">PREFERRED DATE</label>
+
+          <input
+            id="visitDate"
+            type="date"
+            required>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-gold">
+        PREPARE WHATSAPP ENQUIRY ↗
+      </button>
+
+      <p style="margin:15px 0 0;font-size:10px">
+        Demo form: a confirmed business WhatsApp number
+        must be configured before customer enquiries can
+        be sent to the salon.
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <a href="#home" class="logo">
+      CUTS <span>&</span> CURVES
+      <small>THE ART OF STYLE</small>
+    </a>
+
+    <div class="footer-copy">
+      © <span id="year"></span> Cuts & Curves concept.<br>
+      Sample website design for presentation.
+    </div>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#appointment">Contact</a>
+    </div>
+
+  </div>
+
+  <div class="footer-demo">
+    SAMPLE CONCEPT · IMAGES AND BUSINESS DETAILS REQUIRE VERIFICATION
+  </div>
+
+</footer>
+
+<!-- FLOATING WHATSAPP ENQUIRY -->
+
+<a
+  href="#appointment"
+  class="float-btn"
+  aria-label="Make an appointment enquiry">
+  ↗
+</a>
+
+<script>
+/* MOBILE MENU */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+
+  menuToggle.textContent = isOpen ? "×" : "☰";
+});
+
+document.querySelectorAll("#navLinks a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* SCROLL REVEAL ANIMATION */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  revealElements.forEach(function (element) {
+    observer.observe(element);
+  });
+} else {
+  revealElements.forEach(function (element) {
+    element.classList.add("visible");
+  });
+}
+
+/* CURRENT YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/* MINIMUM APPOINTMENT DATE */
+
+const visitDate = document.getElementById("visitDate");
+
+const today = new Date();
+const localToday = [
+  today.getFullYear(),
+  String(today.getMonth() + 1).padStart(2, "0"),
+  String(today.getDate()).padStart(2, "0")
+].join("-");
+
+visitDate.min = localToday;
+visitDate.value = localToday;
+
+/*
+  DEMO CONFIGURATION
+
+  Replace this with the salon's confirmed WhatsApp number
+  before enabling real enquiries.
+
+  Use country code + number, without +, spaces or dashes.
+  Example format: 919876543210
+
+  Leave empty while presenting the demo.
+*/
+
+const SALON_WHATSAPP_NUMBER = "";
+
+/* APPOINTMENT ENQUIRY */
+
+document.getElementById("bookingForm").addEventListener(
+  "submit",
+  function (event) {
+    event.preventDefault();
+
+    const name =
+      document.getElementById("customerName").value.trim();
+
+    const phone =
+      document.getElementById("customerPhone").value.trim();
+
+    const service =
+      document.getElementById("serviceChoice").value;
+
+    const date =
+      document.getElementById("visitDate").value;
+
+    if (!name || !phone || !service || !date) {
+      alert("Please complete all fields.");
+      return;
+    }
+
+    if (!SALON_WHATSAPP_NUMBER) {
+      alert(
+        "This is a demo website. The salon's confirmed " +
+        "WhatsApp number must be added before enquiries " +
+        "can be sent. No information has been sent."
+      );
+      return;
+    }
+
+    const message =
+      "Hello Cuts & Curves! I would like to enquire " +
+      "about an appointment.\n\n" +
+      "Name: " + name + "\n" +
+      "Phone: " + phone + "\n" +
+      "Service: " + service + "\n" +
+      "Preferred date: " + date;
+
+    const whatsappURL =
+      "https://wa.me/" +
+      SALON_WHATSAPP_NUMBER +
+      "?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+  }
+);
+</script>
+
+</body>
+</html>
